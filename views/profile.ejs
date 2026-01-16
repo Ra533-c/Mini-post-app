@@ -11,8 +11,13 @@
         <div class="navbar flex justify-end w-full">
             <a class="bg-red-500 rounded-md hover:bg-red-400 px-3 py-2 text-sm inline-block mb-3" href="/logout">Logout</a>
         </div>
-        <h3 class="text-3xl mb-2 font-semibold"><span class="font-light">Hello</span>, <%= user.name %>👋</h3>
-        <h5 class="mb-5 ">You can create a new post ✅</h5>
+        <div class="flex items-start gap-2 mt-3">
+            <div class="w-10 h-10 rounded-md">
+                <img class="mb-4 w-full h-full object-cover overflow-hidden rounded-md" src="/image/uploads/<%= user.profilepic %>" alt="profilePic">
+            </div>
+            <h3 class="text-3xl mb-3 font-semibold"><span class="font-light">Hello</span>, <%= user.name %>👋</h3>
+        </div>
+        <h5 class="mb-5">You can create a new post ✅</h5>
         <form action="/post" method="POST">
             <textarea class="block w-1/3 outline-none p-3 resize-none bg-transparent border-1 border-zinc-800 rounded-md" name="content" placeholder="What's on your mind !" required></textarea>
             <input class="block mt-2 w-40 text-md px-3 py-2 bg-blue-500 hover:bg-blue-600 rounded-md font-semibold" type="submit" value="Create new post">
